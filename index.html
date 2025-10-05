@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pendaftaran Mahasiswa Baru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Formulir Pendaftaran Mahasiswa Baru</h2>
+
+    <!-- Progress Steps -->
+    <div class="progress-wrapper">
+      <div class="progress-step active">1</div>
+      <div class="progress-step">2</div>
+      <div class="progress-step">3</div>
+      <div class="progress-step">4</div>
+      <div class="progress-step">5</div>
+      <div class="progress-step">6</div>
+    </div>
+
+    <form id="regForm">
+      <!-- Step 1: Data Pribadi -->
+      <fieldset class="active">
+        <h3 class="judul-section">Data Pribadi</h3>
+        <label>Nama Lengkap</label>
+        <input type="text" name="nama" required>
+        <label>Jenis Kelamin</label>
+        <select name="gender" required>
+          <option value="">-- Pilih --</option>
+          <option>Laki-laki</option>
+          <option>Perempuan</option>
+        </select>
+        <label>Tempat & Tanggal Lahir</label>
+        <input type="text" name="ttl" placeholder="Contoh: Jakarta, 01-01-2000" required>
+        <label>NIK / No. KTP</label>
+        <input type="text" name="nik" required>
+        <label>Alamat Lengkap</label>
+        <textarea name="alamat" required></textarea>
+        <label>Nomor Telepon / HP</label>
+        <input type="tel" name="hp" required>
+        <label>Email Aktif</label>
+        <input type="email" name="email" required>
+        <label>Agama</label>
+        <select name="agama" required>
+          <option value="">-- Pilih --</option>
+          <option>Islam</option>
+          <option>Kristen</option>
+          <option>Katolik</option>
+          <option>Hindu</option>
+          <option>Buddha</option>
+          <option>Konghucu</option>
+        </select>
+        <label>Golongan Darah</label>
+        <select name="goldar" required>
+          <option value="">-- Pilih --</option>
+          <option>A</option><option>B</option><option>AB</option><option>O</option>
+        </select>
+        <label>Status Perkawinan</label>
+        <select name="status" required>
+          <option value="">-- Pilih --</option>
+          <option>Belum Kawin</option>
+          <option>Kawin</option>
+        </select>
+        <div class="buttons">
+          <span></span>
+          <button type="button" onclick="nextStep()">Lanjut</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 2: Data Pendidikan -->
+      <fieldset>
+        <h3 class="judul-section">Data Pendidikan</h3>
+        <label>Asal Sekolah</label>
+        <input type="text" name="asal_sekolah" required>
+        <label>Tahun Lulus</label>
+        <input type="number" name="tahun_lulus" required>
+        <label>Jurusan SMA/SMK</label>
+        <input type="text" name="jurusan" required>
+        <label>Nomor Ijazah / SKHU</label>
+        <input type="text" name="no_ijazah" required>
+        <label>Nilai Rata-rata</label>
+        <input type="text" name="nilai" required>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Kembali</button>
+          <button type="button" onclick="nextStep()">Lanjut</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 3: Data Orang Tua -->
+      <fieldset>
+        <h3 class="judul-section">Data Orang Tua / Wali</h3>
+        <label>Nama Ayah</label>
+        <input type="text" name="ayah" required>
+        <label>Pekerjaan Ayah</label>
+        <input type="text" name="pekerjaan_ayah" required>
+        <label>Pendidikan Ayah</label>
+        <input type="text" name="pendidikan_ayah" required>
+        <label>Nama Ibu</label>
+        <input type="text" name="ibu" required>
+        <label>Pekerjaan Ibu</label>
+        <input type="text" name="pekerjaan_ibu" required>
+        <label>Pendidikan Ibu</label>
+        <input type="text" name="pendidikan_ibu" required>
+        <label>Alamat Orang Tua</label>
+        <textarea name="alamat_ortu" required></textarea>
+        <label>No. HP Orang Tua</label>
+        <input type="tel" name="hp_ortu" required>
+        <label>Penghasilan Orang Tua</label>
+        <select name="penghasilan" required>
+          <option value="">-- Pilih --</option>
+          <option>< 1 Juta</option>
+          <option>1 - 3 Juta</option>
+          <option>3 - 5 Juta</option>
+          <option>> 5 Juta</option>
+        </select>
+        <label>Nama Wali (Jika Ada)</label>
+        <input type="text" name="wali">
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Kembali</button>
+          <button type="button" onclick="nextStep()">Lanjut</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 4: Data Pendaftaran -->
+      <fieldset>
+        <h3 class="judul-section">Data Pendaftaran</h3>
+        <label>Pilihan Program Studi 1</label>
+        <select name="prodi1" required>
+          <option value="">-- Pilih --</option>
+          <option>Teknik Informatika</option>
+          <option>Sistem Informasi</option>
+          <option>Teknik Elektro</option>
+          <option>Manajemen</option>
+          <option>Akuntansi</option>
+        </select>
+        <label>Pilihan Program Studi 2</label>
+        <select name="prodi2" required>
+          <option value="">-- Pilih --</option>
+          <option>Teknik Informatika</option>
+          <option>Sistem Informasi</option>
+          <option>Teknik Elektro</option>
+          <option>Manajemen</option>
+          <option>Akuntansi</option>
+        </select>
+        <label>Jalur Pendaftaran</label>
+        <select name="jalur" required>
+          <option value="">-- Pilih --</option>
+          <option>SNBP</option>
+          <option>SNBT</option>
+          <option>Mandiri</option>
+          <option>Beasiswa</option>
+        </select>
+        <label>Nomor Pendaftaran / Ujian</label>
+        <input type="text" name="no_pendaftaran" required>
+        <label>Upload Ijazah</label>
+        <input type="file" name="ijazah" required>
+        <label>Upload KTP</label>
+        <input type="file" name="ktp" required>
+        <label>Upload Pas Foto</label>
+        <input type="file" name="foto" required>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Kembali</button>
+          <button type="button" onclick="nextStep()">Lanjut</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 5: Data Tambahan -->
+      <fieldset>
+        <h3 class="judul-section">Data Tambahan</h3>
+        <label>Prestasi Akademik/Non Akademik</label>
+        <textarea name="prestasi" required></textarea>
+        <label>Keterangan Kesehatan</label>
+        <textarea name="kesehatan" required></textarea>
+        <label>Hobi / Minat Bakat</label>
+        <textarea name="hobi" required></textarea>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Kembali</button>
+          <button type="button" onclick="nextStep()">Lanjut</button>
+        </div>
+      </fieldset>
+
+      <!-- Step 6: Preview -->
+      <fieldset>
+        <h3 class="judul-section">Preview Data</h3>
+        <div class="preview">
+          <h3>Preview Data Pendaftaran</h3>
+          <div id="previewContent"></div>
+        </div>
+        <div class="buttons">
+          <button type="button" onclick="prevStep()">Kembali</button>
+          <button type="submit">Kirim Pendaftaran</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
